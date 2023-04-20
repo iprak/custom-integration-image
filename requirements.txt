@@ -1,17 +1,16 @@
 # Pre-commit requirements (copied from requirements_test_pre_commit.txt)
 bandit==1.7.4
-bandit==1.7.4
 black==23.3.0
 codespell==2.2.2
 isort==5.12.0
 ruff==0.0.260
 yamllint==1.28.0
 
-# Unit tests requirements
+# Unit tests requirements (from requirements_test.txt)
 pylint==2.17.0
-pytest==7.2.2
+pytest==7.3.1
 numpy==1.23.2
 pytest-homeassistant-custom-component==0.13.12
 
 #HomeAssistant
-homeassistant==2023.3.6
+homeassistant==2023.4.5
