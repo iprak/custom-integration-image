@@ -25,4 +25,4 @@ numpy==1.23.2
 pytest-homeassistant-custom-component==0.13.12
 
 #HomeAssistant
-homeassistant==2023.4.5
+homeassistant==2023.5.0
