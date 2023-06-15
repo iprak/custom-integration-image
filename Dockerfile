@@ -15,5 +15,3 @@ RUN \
 COPY requirements.txt ./
 RUN pip3 install -r requirements.txt --use-deprecated=legacy-resolver
 RUN rm -rf requirements.txt
-
-RUN pip3 install -r requirements_component.txt --use-deprecated=legacy-resolver
