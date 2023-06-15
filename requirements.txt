@@ -27,6 +27,16 @@ pytest==7.3.1
 
 requests_mock==1.10.0
 
+
+# Packages from package_constraints.txt which are otherwise installed on run
+aiohttp-cors==0.7.0
+home-assistant-frontend==20230608.0
+janus==1.0.0
 numpy==1.23.2
+Pillow==9.5.0
+SQLAlchemy==2.0.15
+
+
+# HomeAssistant
 pytest-homeassistant-custom-component==0.13.37
 homeassistant==2023.6.1
