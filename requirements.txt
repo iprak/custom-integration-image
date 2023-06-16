@@ -38,5 +38,5 @@ SQLAlchemy==2.0.15
 
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.37
-homeassistant==2023.6.1
+pytest-homeassistant-custom-component==0.13.38
+homeassistant==2023.6.2
