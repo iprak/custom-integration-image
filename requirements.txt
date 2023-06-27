@@ -1,8 +1,6 @@
 # Pre-commit requirements (copied from requirements_test_pre_commit.txt)
-bandit==1.7.4
 black==23.3.0
 codespell==2.2.2
-isort==5.12.0
 ruff==0.0.272
 yamllint==1.28.0
 
@@ -38,5 +36,5 @@ SQLAlchemy==2.0.15
 
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.38
-homeassistant==2023.6.2
+pytest-homeassistant-custom-component==0.13.39
+homeassistant==2023.6.3
