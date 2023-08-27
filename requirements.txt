@@ -1,7 +1,7 @@
 # Pre-commit requirements (copied from requirements_test_pre_commit.txt)
 black==23.7.0
 codespell==2.2.2
-ruff==0.0.280
+ruff==0.0.285
 yamllint==1.32.0
 
 # Unit tests requirements (from requirements_test.txt)
@@ -28,7 +28,7 @@ requests_mock==1.11.0
 
 # Packages from package_constraints.txt which are otherwise installed on run
 aiohttp-cors==0.7.0
-home-assistant-frontend==20230802.0
+home-assistant-frontend==20230802.1
 janus==1.0.0
 numpy==1.23.2
 Pillow==10.0.0
@@ -36,5 +36,5 @@ SQLAlchemy==2.0.15
 
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.50
-homeassistant==2023.8.1
+pytest-homeassistant-custom-component==0.13.53
+homeassistant==2023.8.4
