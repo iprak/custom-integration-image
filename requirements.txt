@@ -33,7 +33,7 @@ janus==1.0.0
 numpy==1.23.2
 Pillow==10.0.0
 SQLAlchemy==2.0.15
-
+radios==0.1.1
 
 # HomeAssistant
 pytest-homeassistant-custom-component==0.13.54
