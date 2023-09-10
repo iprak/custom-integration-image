@@ -37,4 +37,4 @@ COPY requirements.txt ./
 RUN pip3 install -r requirements.txt --use-deprecated=legacy-resolver
 RUN rm -rf requirements.txt
 
-COPY pylint /tmp/pylint
+COPY container_content /tmp/container_content
