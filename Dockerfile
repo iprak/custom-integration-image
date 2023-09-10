@@ -36,3 +36,5 @@ RUN \
 COPY requirements.txt ./
 RUN pip3 install -r requirements.txt --use-deprecated=legacy-resolver
 RUN rm -rf requirements.txt
+
+COPY test ./test
