@@ -1,7 +1,7 @@
 # Pre-commit requirements (copied from requirements_test_pre_commit.txt)
 black==23.10.0
 codespell==2.2.2
-ruff==0.1.1
+ruff==0.1.8
 yamllint==1.32.0
 
 # Unit tests requirements (from requirements_test.txt)
@@ -21,9 +21,8 @@ pytest-timeout==2.1.0
 pytest-unordered==0.5.2
 pytest-picked==0.5.0
 pytest-xdist==3.3.1
-pytest==7.4.3
-
-requests_mock==1.11.0
+pytest==7.4.4
+requests-mock==1.11.0
 
 
 # Packages from package_constraints.txt which are otherwise installed on run
@@ -31,14 +30,16 @@ aiohttp-fast-url-dispatcher==0.3.0
 aiohttp-zlib-ng==0.1.1
 aiohttp==3.9.1
 aiohttp_cors==0.7.0
-home-assistant-frontend==20231208.2
+home-assistant-bluetooth==1.12.0
+home-assistant-frontend==20240112.0
+home-assistant-intents==2024.1.2
 janus==1.0.0
 numpy==1.26.0
 Pillow==10.1.0
-SQLAlchemy==2.0.23
+SQLAlchemy==2.0.25
 
 radios==0.1.1
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.85
-homeassistant==2023.12.3
+pytest-homeassistant-custom-component==0.13.88
+homeassistant==2024.1.2
