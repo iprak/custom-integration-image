@@ -40,5 +40,5 @@ SQLAlchemy==2.0.25
 radios==0.1.1
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.98
-homeassistant==2024.2.0
+pytest-homeassistant-custom-component==0.13.100
+homeassistant==2024.2.1
