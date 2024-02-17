@@ -33,8 +33,12 @@ RUN \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt ./
-RUN pip3 install -r requirements.txt --use-deprecated=legacy-resolver
-RUN rm -rf requirements.txt
+#Copy .vscode, pylint, pyproject.toml, etc.
+COPY container_content ./container_content
 
-COPY container_content /tmp/container_content
+#Install default requirements
+COPY requirements.txt ./
+RUN pip3 install -r requirements.txt --use-deprecated=legacy-resolver; rm -rf requirements.txt
+
+#Ensure setup.sh is executable
+RUN chmod +x /container_content/scripts/setup.sh
