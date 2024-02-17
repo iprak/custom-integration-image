@@ -5,8 +5,8 @@ set -e
 
 echo "Moving additional container content"
 [ -f "/container_content/pylint" ] && { rm -R ./pylint; }
-mv -f /container_content/pylint .
-mv -f /container_content/pyproject.toml .
+cp -rf /container_content/pylint .
+cp -f /container_content/pyproject.toml .
 
 echo "Preparing config folder"
 mkdir -p /config
