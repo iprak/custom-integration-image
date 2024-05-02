@@ -1,6 +1,6 @@
 # Pre-commit requirements (copied from requirements_test_pre_commit.txt)
 codespell==2.2.6
-ruff==0.3.5
+ruff==0.4.2
 yamllint==1.35.1
 
 # from requirements_test.txt
@@ -155,5 +155,5 @@ zeroconf==0.132.0
 
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.114
-homeassistant==2024.4.3
+pytest-homeassistant-custom-component==0.13.119
+homeassistant==2024.5.0
