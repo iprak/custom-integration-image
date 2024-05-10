@@ -1,5 +1,4 @@
 
-
 [tool.pylint.MAIN]
 py-version = "3.12"
 ignore = [
@@ -219,6 +218,8 @@ disable = [
     "no-else-continue", # RET507
     "no-else-raise", # RET506
     "no-else-return", # RET505
+    "broad-except", # BLE001
+    "protected-access", # SLF001
     # "no-self-use", # PLR6301  # Optional plugin, not enabled
 
     # Handled by mypy
@@ -308,9 +309,8 @@ enable = [
 ]
 per-file-ignores = [
     # hass-component-root-import: Tests test non-public APIs
-    # protected-access: Tests do often test internals a lot
     # redefined-outer-name: Tests reference fixtures in the test function
-    "/tests/:hass-component-root-import,protected-access,redefined-outer-name",
+    "/tests/:hass-component-root-import,redefined-outer-name",
 ]
 
 [tool.pylint.REPORTS]
@@ -568,7 +568,7 @@ filterwarnings = [
 ]
 
 [tool.ruff]
-required-version = ">=0.4.2"
+required-version = ">=0.4.3"
 
 [tool.ruff.lint]
 select = [
@@ -585,6 +585,7 @@ select = [
     "B032", # Possible unintentional type annotation (using :). Did you mean to assign (using =)?
     "B904", # Use raise from to specify exception cause
     "B905", # zip() without an explicit strict= parameter
+    "BLE",
     "C", # complexity
     "COM818", # Trailing comma on bare tuple prohibited
     "D", # docstrings
@@ -612,6 +613,7 @@ select = [
     "RSE", # flake8-raise
     "RUF005", # Consider iterable unpacking instead of concatenation
     "RUF006", # Store a reference to the return value of asyncio.create_task
+    "RUF010", # Use explicit conversion flag
     "RUF013", # PEP 484 prohibits implicit Optional
     "RUF018", # Avoid assignment expressions in assert statements
     "RUF019", # Unnecessary key check before dictionary access
@@ -635,6 +637,7 @@ select = [
     "S608", # hardcoded-sql-expression
     "S609", # unix-command-wildcard-injection
     "SIM", # flake8-simplify
+    "SLF", # flake8-self
     "SLOT", # flake8-slots
     "T100", # Trace found: {name} used
     "T20", # flake8-print
@@ -668,6 +671,7 @@ ignore = [
     "RUF003", # Comment contains ambiguous unicode character.
     "RUF015", # Prefer next(...) over single element slice
     "SIM102", # Use a single if statement instead of nested if statements
+    "SIM103", # Return the condition {condition} directly
     "SIM108", # Use ternary operator {contents} instead of if-else-block
     "SIM115", # Use context handler for opening files
     "TRY003", # Avoid specifying long messages outside the exception class

@@ -3,4 +3,11 @@
 *     text eol=lf
 *.py  whitespace=error
 
-Dockerfile linguist-language=Dockerfile
+*.ico binary
+*.jpg binary
+*.png binary
+*.zip binary
+*.mp3 binary
+*.pcm binary
+
+Dockerfile.dev linguist-language=Dockerfile
