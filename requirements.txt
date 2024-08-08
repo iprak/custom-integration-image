@@ -160,5 +160,5 @@ zeroconf==0.132.2
 
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.151
-homeassistant==2024.8.0b5
+pytest-homeassistant-custom-component==0.13.152
+homeassistant==2024.8.0
