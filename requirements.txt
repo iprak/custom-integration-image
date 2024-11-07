@@ -1,20 +1,20 @@
 # Home Assistant Core (requirements.txt)
 aiodns==3.2.0
-aiohasupervisor==0.2.0b0
-aiohttp==3.10.10
+aiohasupervisor==0.2.1
+aiohttp==3.11.0b3
 aiohttp_cors==0.7.0
 aiohttp-fast-zlib==0.1.1
 aiozoneinfo==0.2.1
 astral==2.2
 async-interrupt==1.2.0
-attrs==23.2.0
+attrs==24.2.0
 atomicwrites-homeassistant==1.4.1
 awesomeversion==24.6.0
 bcrypt==4.2.0
 certifi>=2021.5.30
 ciso8601==2.3.1
 fnv-hash-fast==1.0.2
-hass-nabucasa==0.81.1
+hass-nabucasa==0.84.0
 httpx==0.27.2
 home-assistant-bluetooth==1.13.0
 ifaddr==0.2.0
@@ -25,35 +25,37 @@ cryptography==43.0.1
 Pillow==10.4.0
 propcache==0.2.0
 pyOpenSSL==24.2.1
-orjson==3.10.7
+orjson==3.10.10
 packaging>=23.1
 psutil-home-assistant==0.0.1
 python-slugify==8.0.4
 PyYAML==6.0.2
 requests==2.32.3
+securetar==2024.2.1
 SQLAlchemy==2.0.31
 typing-extensions>=4.12.2,<5.0
 ulid-transform==1.0.2
 urllib3>=1.26.5,<2
-uv==0.4.17
+uv==0.4.28
 voluptuous==0.15.2
 voluptuous-serialize==2.6.0
 voluptuous-openapi==0.0.5
-yarl==1.15.1
+yarl==1.17.1
+webrtc-models==0.2.0
 
 
 # Tetsing requirements (requirements_test.txt)
-astroid==3.3.4
+astroid==3.3.5
 coverage==7.6.1
 freezegun==1.5.1
+license-expression==30.4.0
 mock-open==1.4.0
-mypy-dev==1.12.0a5
+mypy-dev==1.14.0a2
 pre-commit==4.0.0
 pydantic==1.10.18
 pylint==3.3.1
 pylint-per-file-ignores==1.3.2
 pipdeptree==2.23.4
-pip-licenses==5.0.0
 pytest-asyncio==0.24.0
 pytest-aiohttp==1.0.5
 pytest-cov==5.0.0
@@ -90,7 +92,7 @@ types-xmltodict==0.13.0.3
 
 # Additional requirements_test_pre_commit.txt
 codespell==2.3.0
-ruff==0.6.9
+ruff==0.7.2
 yamllint==1.35.1
 
 
@@ -98,16 +100,17 @@ yamllint==1.35.1
 aiodhcpwatcher==1.0.2
 aiodiscover==2.1.0
 aiodns==3.2.0
-aiohasupervisor==0.2.0b0
+aiohasupervisor==0.2.1
 aiohttp-fast-zlib==0.1.1
-aiohttp==3.10.10
+aiohttp==3.11.0b3
 aiohttp_cors==0.7.0
 aiozoneinfo==0.2.1
 astral==2.2
 async-interrupt==1.2.0
 async-upnp-client==0.41.0
 atomicwrites-homeassistant==1.4.1
-attrs==23.2.0
+attrs==24.2.0
+av==13.1.0
 awesomeversion==24.6.0
 bcrypt==4.2.0
 bleak-retry-connector==3.6.0
@@ -121,20 +124,20 @@ ciso8601==2.3.1
 cryptography==43.0.1
 dbus-fast==2.24.3
 fnv-hash-fast==1.0.2
-ha-av==10.1.1
-ha-ffmpeg==3.2.0
-habluetooth==3.5.0
-hass-nabucasa==0.81.1
+go2rtc-client==0.1.0
+ha-ffmpeg==3.2.1
+habluetooth==3.6.0
+hass-nabucasa==0.84.0
 hassil==1.7.4
 home-assistant-bluetooth==1.13.0
-home-assistant-frontend==20241002.3
-home-assistant-intents==2024.10.2
+home-assistant-frontend==20241106.0
+home-assistant-intents==2024.11.6
 httpx==0.27.2
 ifaddr==0.2.0
 Jinja2==3.1.4
 lru-dict==1.3.0
 mutagen==1.47.0
-orjson==3.10.7
+orjson==3.10.10
 packaging>=23.1
 paho-mqtt==1.6.1
 Pillow==10.4.0
@@ -151,17 +154,19 @@ PyTurboJPEG==1.7.5
 pyudev==0.24.1
 PyYAML==6.0.2
 requests==2.32.3
+securetar==2024.2.1
 SQLAlchemy==2.0.31
 typing-extensions>=4.12.2,<5.0
 ulid-transform==1.0.2
 urllib3>=1.26.5,<2
-uv==0.4.17
+uv==0.4.28
 voluptuous-openapi==0.0.5
 voluptuous-serialize==2.6.0
 voluptuous==0.15.2
-yarl==1.15.1
-zeroconf==0.135.0
+webrtc-models==0.2.0
+yarl==1.17.1
+zeroconf==0.136.0
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.173
-homeassistant==2024.10.2
+pytest-homeassistant-custom-component==0.13.181
+homeassistant==2024.11.0
