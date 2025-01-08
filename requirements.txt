@@ -184,5 +184,5 @@ yarl==1.18.3
 zeroconf==0.137.2
 
 # HomeAssistant
-pytest-homeassistant-custom-component==0.13.201
-homeassistant==2025.1.0
+pytest-homeassistant-custom-component==0.13.202
+homeassistant==2025.1.1
