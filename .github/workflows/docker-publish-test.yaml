@@ -12,7 +12,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository }}-test
 
 
 jobs:
@@ -60,7 +60,6 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=ref,event=tag
             type=ref,event=branch
 
       # Build and push Docker image with Buildx (don't push on PR)
@@ -71,7 +70,6 @@ jobs:
         with:
           context: .
           push: true
-          #tags: ghcr.io/iprak/custom-integration-image:test
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
