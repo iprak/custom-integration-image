@@ -8,6 +8,12 @@ echo "Moving additional container content"
 cp -rf /container_content/pylint .
 cp -f /container_content/pyproject.toml .
 
+echo "Preparing .vscode folder"
+if [ -f ".vscode" ]; then
+    rm -R .vscode
+fi
+cp -rf /workspaces/container_content/.vscode .
+
 echo "Preparing config folder"
 mkdir -p /config
 

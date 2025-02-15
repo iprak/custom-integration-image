@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Home Assistant Core",
+        "type": "shell",
+        "command": "hass -c ./config",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": [],
+        "dependsOn": []
+      },
+      {
+        "label": "Pytest",
+        "type": "shell",
+        "command": "${command:python.interpreterPath} -m pytest --timeout=10 tests",
+        "dependsOn": [],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Ruff",
+        "type": "shell",
+        "command": "pre-commit run ruff --all-files",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Pylint",
+        "type": "shell",
+        "command": "pylint custom_components",
+        "dependsOn": [],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
