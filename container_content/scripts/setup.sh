@@ -3,10 +3,14 @@
 # Stop on errors
 set -e
 
-echo "Moving additional container content"
-[ -f "/container_content/pylint" ] && { rm -R ./pylint; }
-cp -rf /container_content/pylint .
-cp -f /container_content/pyproject.toml .
+echo "Copying pylint folder"
+if [ -f "pylint" ]; then
+    rm -R pylint
+fi
+cp -rf /workspaces/container_content/pylint .
+
+echo "Copying pyproject.toml"
+cp -f /workspaces/container_content/pyproject.toml .
 
 echo "Preparing .vscode folder"
 if [ -f ".vscode" ]; then
@@ -15,19 +19,27 @@ fi
 cp -rf /workspaces/container_content/.vscode .
 
 echo "Preparing config folder"
-mkdir -p /config
+mkdir -p config
+hass --script ensure_config -c config
 
-FILE=".devcontainer/configuration.yaml"
-[ -f $FILE ] && { echo "Linking configuration.yaml"; ln -sfr $FILE /config/configuration.yaml; }
-FILE=".devcontainer/secrets.yaml"
-[ -f $FILE ] && { echo "Linking secrets.yaml"; ln -sfr $FILE /config/secrets.yaml; }
+if [ -f ".devcontainer/configuration.yaml" ]; then
+    echo "Linking configuration.yaml"
+    ln -sfr ".devcontainer/configuration.yaml" config/configuration.yaml
+fi
+
+if [ -f ".devcontainer/secrets.yaml" ]; then
+    echo "Linking secrets.yaml"
+    ln -sfr ".devcontainer/secrets.yaml" config/secrets.yaml
+fi
 
 echo "Linking custom_components"
 rm -rf /config/custom_components
-ln -sfr custom_components /config/custom_components
+ln -sfr custom_components config/custom_components
 
 # Extract .vscode, pylint, pyproject.toml, setup.cfg
 #rsync -a -v --remove-source-files /tmp/container_content/ ./
 
-FILE="requirements_component.txt"
-[ -f $FILE ] && { echo "Installing requirements from requirements_component.txt"; pip3 install -r $FILE --use-deprecated=legacy-resolver; }
+if [ -f "requirements_component.txt" ]; then
+    echo "Installing requirements from requirements_component.txt"
+    pip3 install -r "requirements_component.txt"
+fi
