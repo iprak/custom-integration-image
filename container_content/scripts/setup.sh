@@ -12,6 +12,9 @@ cp -rf /workspaces/container_content/pylint .
 echo "Copying pyproject.toml"
 cp -f /workspaces/container_content/pyproject.toml .
 
+echo "Copying .pre-commit-config.yaml"
+cp -f /workspaces/container_content/.pre-commit-config.yaml .
+
 echo "Preparing .vscode folder"
 if [ -f ".vscode" ]; then
     rm -R .vscode
