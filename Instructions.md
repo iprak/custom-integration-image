@@ -9,9 +9,8 @@
 * Run `docker build -t custom-integration-image:local .` to build the image locally.
 * Test is locally by changing Dopckerfile in the test project to `FROM custom-integration-image:local`
 
-## Prepare release.
-* On `main`, create a new tag `git tag homeassistant_version`, push it `git push origin tag <tag_name>` and then manually build the package.* Prepare release.
-* On main, create a new tag `git tag homeassistant_version` and then push it `git push origin tag <tag_name>`.
+## Prepare release
+* On `main`, first `pull`, then create a new tag `git tag homeassistant_version`, push it `git push origin tag <tag_name>`.
 * Run the action `Docker` on the new tag.
 
 ## Tag maintenance
