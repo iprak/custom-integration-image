@@ -140,7 +140,7 @@ class HassEnforceClassModule(BaseChecker):
 
             for ancestor in top_level_ancestors:
                 if ancestor.name in _BASE_ENTITY_MODULES and not any(
-                    parent.name in _MODULE_CLASSES for parent in ancestors
+                    anc.name in _MODULE_CLASSES for anc in ancestors
                 ):
                     self.add_message(
                         "hass-enforce-class-module",

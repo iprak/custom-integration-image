@@ -252,7 +252,7 @@ _FUNCTION_MATCH: dict[str, list[TypeHintMatch]] = {
             arg_types={
                 0: "HomeAssistant",
                 1: "ConfigEntry",
-                2: "AddConfigEntryEntitiesCallback",
+                2: "AddEntitiesCallback",
             },
             return_type=None,
         ),
@@ -1408,16 +1408,6 @@ _INHERITANCE_MATCH: dict[str, list[ClassTypeHintMatch]] = {
                     return_type="bool",
                 ),
             ],
-        ),
-    ],
-    "entity": [
-        ClassTypeHintMatch(
-            base_class="Entity",
-            matches=_ENTITY_MATCH,
-        ),
-        ClassTypeHintMatch(
-            base_class="RestoreEntity",
-            matches=_RESTORE_ENTITY_MATCH,
         ),
     ],
     "fan": [
