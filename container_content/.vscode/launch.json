@@ -10,7 +10,8 @@
 			"args": [
 				"--debug",
 				"-c",
-				"config"
+				"config",
+				"-v"
 			],
 			"serverReadyAction": {
 				"action": "openExternally"
