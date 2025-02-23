@@ -6,7 +6,7 @@
     * `#"tests".msg = "You should not import tests"`
 
 ## Test
-* Run `docker build -t custom-integration-image:local .` to build the image locally.
+* Run `docker build -t custom-integration-image:local . --force-rm` to build the image locally.
 * Test is locally by changing Dopckerfile in the test project to `FROM custom-integration-image:local`
 
 ## Prepare release
