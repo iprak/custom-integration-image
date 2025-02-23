@@ -3,37 +3,54 @@
 # Stop on errors
 set -e
 
-echo "Copying pylint folder"
-if [ -f "pylint" ]; then
-    rm -R pylint
-fi
-cp -rf /workspaces/container_content/pylint .
+function ensure_hass_config() {
+    echo "Preparing config folder"
+    mkdir -p config
+    hass --script ensure_config -c config 
 
-echo "Copying pyproject.toml"
-cp -f /workspaces/container_content/pyproject.toml .
+    echo "Creating Home Assistant User"
+    hass --script auth -c config add test test
 
-echo "Copying .pre-commit-config.yaml"
-cp -f /workspaces/container_content/.pre-commit-config.yaml .
+    echo "Skipping onboarding"
+    cp -f /workspaces/container_content/onboarding config/.storage
+}
 
-echo "Preparing .vscode folder"
-if [ -f ".vscode" ]; then
-    rm -R .vscode
-fi
-cp -rf /workspaces/container_content/.vscode .
+function copy_dev_content() {
+    echo "Copying pylint folder"
+    if [ -f "pylint" ]; then
+        rm -R pylint
+    fi
+    cp -rf /workspaces/container_content/pylint .
 
-echo "Preparing config folder"
-mkdir -p config
-hass --script ensure_config -c config
+    echo "Copying pyproject.toml"
+    cp -f /workspaces/container_content/pyproject.toml .
 
-if [ -f ".devcontainer/configuration.yaml" ]; then
-    echo "Linking configuration.yaml"
-    ln -sfr ".devcontainer/configuration.yaml" config/configuration.yaml
-fi
+    echo "Copying .pre-commit-config.yaml"
+    cp -f /workspaces/container_content/.pre-commit-config.yaml .
 
-if [ -f ".devcontainer/secrets.yaml" ]; then
-    echo "Linking secrets.yaml"
-    ln -sfr ".devcontainer/secrets.yaml" config/secrets.yaml
-fi
+    echo "Preparing .vscode folder"
+    if [ -f ".vscode" ]; then
+        rm -R .vscode
+    fi
+    cp -rf /workspaces/container_content/.vscode .
+}
+
+function copy_configuration_overrides() {
+    if [ -f ".devcontainer/configuration.yaml" ]; then
+        echo "Linking configuration.yaml"
+        ln -sfr ".devcontainer/configuration.yaml" config/configuration.yaml
+    fi
+
+    if [ -f ".devcontainer/secrets.yaml" ]; then
+        echo "Linking secrets.yaml"
+        ln -sfr ".devcontainer/secrets.yaml" config/secrets.yaml
+    fi
+}
+
+ensure_hass_config
+copy_dev_content
+copy_configuration_overrides
+
 
 echo "Linking custom_components"
 rm -rf /config/custom_components
