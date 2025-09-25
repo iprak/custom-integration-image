@@ -1,2 +1,2 @@
-pytest-homeassistant-custom-component==0.13.262
-homeassistant==2025.7.2
+pytest-homeassistant-custom-component==0.13.281
+homeassistant==2025.9.4
