@@ -30,6 +30,7 @@ RUN \
         libturbojpeg0 \
         libyaml-dev \
         libxml2 \
+        gh \
         git \
         cmake \
     && apt-get clean \
