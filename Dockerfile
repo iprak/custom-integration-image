@@ -44,8 +44,14 @@ WORKDIR /tmp
 # Install default requirements
 COPY requirements.txt requirements_test.txt requirements_test_all.txt requirements_test_pre_commit.txt my_requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
-RUN pip3 install -r requirements.txt
-RUN pip3 install -r requirements_test_all.txt
+
+# All core requirements (this includes requirements.txt)
+RUN pip3 install -r requirements_all.txt
+
+# Testing requirements
+RUN pip3 install -r requirements_test.txt
+
+# Custom requirements
 RUN pip3 install -r my_requirements.txt
 
 # Copy container_content into /workspaces. It will be created if it doesn't exist.
