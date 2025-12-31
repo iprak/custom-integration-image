@@ -45,8 +45,8 @@ WORKDIR /tmp
 COPY my_requirements.txt requirements_all.txt requirements_test_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
 
-# All core requirements (this includes requirements.txt)
-RUN pip3 install -r requirements_all.txt
+# Only core requirements
+RUN pip3 install -r requirements.txt
 
 # Testing requirements
 RUN pip3 install -r requirements_test.txt
