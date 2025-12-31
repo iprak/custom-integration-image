@@ -42,7 +42,7 @@ RUN pip3 install uv
 WORKDIR /tmp
 
 # Install default requirements
-COPY requirements.txt requirements_test.txt requirements_test_all.txt requirements_test_pre_commit.txt my_requirements.txt ./
+COPY my_requirements.txt requirements_all.txt requirements_test_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
 
 # All core requirements (this includes requirements.txt)
