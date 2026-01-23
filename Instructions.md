@@ -1,7 +1,7 @@
 ## Adjustments
 * Copy content from upstream/**master**.
-
-* Edit `pyproject.toml`
+* Edit `comtainer_content/pyproject.toml`
+    * Remove `[tool.coverage.run]`
     * `"tests/*/*/*" = ["TID252"]`
     * `#"tests".msg = "You should not import tests"`
 
