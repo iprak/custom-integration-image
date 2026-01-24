@@ -13,7 +13,6 @@ RUN \
         libavcodec-dev \
         libavdevice-dev \
         libavutil-dev \
-        libgammu-dev \
         libswscale-dev \
         libswresample-dev \
         libavfilter-dev \
@@ -24,6 +23,7 @@ RUN \
         gh \
         git \
         cmake \
+        autoconf \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
