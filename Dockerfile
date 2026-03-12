@@ -33,8 +33,9 @@ WORKDIR /tmp
 COPY my_requirements.txt requirements_all.txt requirements_test_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
 
-# Install Core, Testing and custom requirements
-RUN pip3 install -r requirements.txt -r requirements_test.txt -r my_requirements.txt
+# Install all, Testing and custom requirements
+# requirements_all includes requirements. Just using requirements results in some important packages like home-assistant-frontend to be missing.
+RUN pip3 install -r requirements_all.txt -r requirements_test.txt -r my_requirements.txt
 
 # Copy container_content into /workspaces. It will be created if it doesn't exist.
 # container_content includes .vscode, pylint, pyproject.toml, etc.
