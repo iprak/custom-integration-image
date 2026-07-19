@@ -36,7 +36,7 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 WORKDIR /tmp
 
 # Install default requirements
-COPY my_requirements.txt requirements_all.txt requirements_test_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
+COPY my_requirements.txt requirements_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
 
 # Install all, Testing and custom requirements
