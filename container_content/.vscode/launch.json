@@ -14,7 +14,9 @@
 				"-v"
 			],
 			"serverReadyAction": {
-				"action": "openExternally"
+				"action": "openExternally",
+				"pattern": "Starting Home Assistant",
+				"uriFormat": "http://localhost:9123/"
 			},
 			"console": "integratedTerminal"
 		}
