@@ -16,12 +16,6 @@ function ensure_hass_config() {
 }
 
 function copy_dev_content() {
-    echo "Copying pylint folder"
-    if [ -f "pylint" ]; then
-        rm -R pylint
-    fi
-    cp -rf /workspaces/container_content/pylint .
-
     echo "Copying pyproject.toml"
     cp -f /workspaces/container_content/pyproject.toml .
 
