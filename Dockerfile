@@ -2,6 +2,9 @@ FROM python:3.14-trixie
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+# Install uv for ultra-fast dependency resolution and wheel caching
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         gh \
@@ -43,8 +46,13 @@ WORKDIR /tmp
 COPY my_requirements.txt requirements_all.txt requirements_test_pre_commit.txt requirements_test.txt requirements.txt ./
 COPY homeassistant/package_constraints.txt homeassistant/package_constraints.txt
 
-# Install test and custom requirements
-RUN pip3 install --no-cache-dir -r my_requirements.txt -r requirements_all.txt -r requirements_test.txt
+# Install test and custom requirements using uv with a persistent BuildKit cache mount
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv pip install --system --no-cache \
+        -c homeassistant/package_constraints.txt \
+        -r my_requirements.txt \
+        -r requirements_all.txt \
+        -r requirements_test.txt
 
 # Copy container_content into /workspaces
 WORKDIR /workspaces
