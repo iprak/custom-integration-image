@@ -5,7 +5,6 @@
 			"name": "Home Assistant",
 			"type": "debugpy",
 			"request": "launch",
-			"python": "${workspaceFolder}/.venv/bin/python",
 			"module": "homeassistant",
 			"justMyCode": false,
 			"args": [
